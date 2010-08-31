@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+<title>${title}</title>
+
+<link rel="stylesheet" media="screen" type="text/css" href="/faces/javax.faces.resource/jug.css" />
+
+<h:outputScript id="jsDude" name="jsf.js" library="javax.faces" />
+</h:head>
+
+<h:body>
+
+<div id="container">
+
+<div id="header"><h1>JSF meets JPA meets HBase</h1></div>
+
+<div id="sub_header">Simple Demo...</div>
+
+<div id="main_content_top"></div>
+
+<div id="main_content">
+
+<div class="content">
+<h:form prependId="false">
+  <h:messages />
+  <ui:insert name="content">CONTENT</ui:insert>
+</h:form>
+</div>
+
+<div class="menu">
+<div class="menu_title">Links</div>
+<ui:include src="links.xhtml" />
+</div>
+
+<div id="clear"></div>
+
+</div>
+
+<div id="main_content_bottom">
+</div>
+
+<div id="footer"><strong>Copyright &copy; 2010</strong> | Bartosch Warzecha, Matthias Weßendorf | <b>Design by</b> <a href="http://www.pikanai.com">Pikanai.com</a></div>
+
+</div>
+
+</h:body>
+
+</html>

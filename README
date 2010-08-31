@@ -1,0 +1,41 @@
+BACKGROUND
+Simple example to use the Apache HBase "BigTable implementation" with JPA.
+The JPA access is provided by the same plugin (DataNucleus) that enables
+the Google App Engine to use JPA for its Datastore.
+
+How to run this SIMPLE example?
+
+Go to HBase (http://hbase.apache.org) and download its version 0.20.3 (see later on why this version)
+Use the simple "standalone" installation.
+
+Details (like requirements) are mentioned here:
+http://hbase.apache.org/docs/current/api/overview-summary.html#standalone
+
+Basically the "standalone" installation is "just" an unzip, setting the JAVA_HOME, and start hbase.
+(see the above link for details)
+
+=== APACHE MAVEN ===
+You need to have Maven 2.x installed on your system
+
+All JARs should be available from a listed repository, however there is ONE exception.
+The HBASE JAR itself.
+
+You need to install it with the following command, from your HBASE installation:
+
+mvn install:install-file -DgroupId=org.apache.hadoop -DartifactId=hbase -Dversion=0.20.3 -Dpackaging=jar -Dfile=/path/to/LOCATION_HBASE.jar
+
+Yes, there are "newer" versions of HBase than the previously mentioned 0.20.3 - However, since the (used) DataNucleus has a dependency we need
+this version... A (bad) hack could be to install the 0.20.6 (e.g.) as 0.20.3 => DON'T DO THIS :-)
+(for testing/playing you should be fine.....)
+
+=== STARTING ===
+
+Once you a) configured/started Apache HBase and b) installed the mentioned hbase-JAR, you can lanch the project.
+
+Simply go to your project root folder and type:
+mvn
+
+This starts up the Jetty container to launch a VERY simple JSF2 application to entry a SIMPLE entry and load them.
+The code uses a (simple) JPA-DAO, where under the hood HBASE is used.
+
+Enjoy
