@@ -31,7 +31,9 @@ import net.wessendorf.logger.JulFactory;
  * AOP via Java EE - (very) simple Interceptor
  * to use (declarative) Transactions via a custom
  * <code>Transactional</code> annotation, like you
- * know from Spring Framework
+ * know from Spring Framework.
+ *
+ * @author Apache OpenWebBeans team (reservation example)
  */
 @Transactional
 @javax.interceptor.Interceptor
